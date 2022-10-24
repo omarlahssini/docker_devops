@@ -29,7 +29,6 @@ jobs:
     needs: test-backend
     # run only when code is compiling and tests are passing
     runs-on: ubuntu-latest
-	
     # steps to perform in job
     steps:
       - name: Checkout code
@@ -59,7 +58,6 @@ jobs:
         with:
           # relative path to the place where source code with Dockerfile is located
           context: ./httpd
-
           tags:  ${{secrets.DOCKER_HUB_USER}}/tp-devops:httpd
           push: ${{ github.ref == 'refs/heads/main' }}
         
