@@ -52,7 +52,7 @@ jobs:
           context: ./database
           tags:  ${{secrets.DOCKER_HUB_USER}}/tp-devops:database
           push: ${{ github.ref == 'refs/heads/main' }}
-	
+
       - name: Build image and push httpd
         uses: docker/build-push-action@v2
         with:
@@ -60,7 +60,3 @@ jobs:
           context: ./httpd
           tags:  ${{secrets.DOCKER_HUB_USER}}/tp-devops:httpd
           push: ${{ github.ref == 'refs/heads/main' }}
-        
-     #finally build your app with the latest command
-      
-	
